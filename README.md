@@ -1,3 +1,8 @@
+Why did I fork this repos:
+
+1. I needed to use EE8ISO8859P2 charset, so I need to edit db_install.rsp and dbca.rsp files to replace AL32UTF8.
+1. The shutdown of database is not working correctly. The entrypoint.sh gets the SIGTERM signal, but it is handled in entrypoint_oracle.sh. So the signal should be passed to the child process too.
+
 Image for running Oracle Database 11g Standard/Enterprise. Due to oracle license restrictions image is not contain database itself and will install it on first run from external directory.
 
 ``This image for development use only``
